@@ -1,5 +1,13 @@
 # The Brutalist — Newspaper-Grid Jekyll Theme
 
+[![License: csswitch Commercial](https://img.shields.io/badge/license-csswitch%20commercial-blue.svg)](./LICENSE)
+[![Buy on Gumroad](https://img.shields.io/badge/Buy-%2449-brightgreen.svg)](https://csswitch.gumroad.com/l/csswitch-brutalist)
+[![Live Demo](https://img.shields.io/badge/demo-live-orange.svg)](https://csswitch.github.io/jekyll-brutalist-theme/)
+
+> **⚠️ License notice:** This theme is source-available but **not free to use**.  
+> Viewing and learning from the code is welcome. Deploying it on any live site requires a [paid license](https://csswitch.gumroad.com/l/csswitch-brutalist).  
+> See [LICENSE](./LICENSE) for full terms.
+
 [![MIT License](https://img.shields.io/badge/license-MIT-0a0a0a.svg)](LICENSE)
 [![Jekyll](https://img.shields.io/badge/jekyll-4.3-0a0a0a.svg)](https://jekyllrb.com)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-compatible-0a0a0a.svg)](https://pages.github.com)
