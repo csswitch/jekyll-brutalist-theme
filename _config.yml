@@ -1,0 +1,35 @@
+title: "The Brutalist"
+description: "A newspaper-grid Jekyll site with raw bold typography"
+url: ""
+baseurl: ""
+author:
+  name: "Your Name"
+  email: "you@example.com"
+
+# Brutalist theme configuration
+brutalist:
+  invert: false          # true = white-on-black, false = black-on-white
+  rule_weight: "heavy"   # light | medium | heavy — border thickness
+  uppercase: true        # force uppercase headings
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+paginate: 6
+paginate_path: "/page:num/"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

@@ -1,0 +1,55 @@
+// Brutalist — Design Tokens
+// Raw newspaper aesthetic: stark black/white, heavy rules, brutal typography
+
+// ── Palette (high-contrast monochrome + one accent) ──────────────────────────
+$black:   #0a0a0a;
+$white:   #f5f0e8;   // newsprint off-white (not pure white)
+$gray-1:  #1a1a1a;
+$gray-2:  #333333;
+$gray-3:  #888888;
+$gray-4:  #cccccc;
+$accent:  #e8001a;   // tabloid red — ONE accent color, used sparingly
+
+$bg:      $white;
+$text:    $black;
+$text-secondary: $gray-2;
+$text-muted:     $gray-3;
+$border:  $black;
+$rule:    $black;
+
+// ── Typography ────────────────────────────────────────────────────────────────
+$font-headline: 'Bebas Neue', sans-serif;   // condensed display — classic tabloid
+$font-body:     'Space Grotesk', sans-serif; // grotesque body — architectural feel
+$font-mono:     'Space Mono', monospace;     // mono — editorial datelines
+
+// ── Borders / Rules ───────────────────────────────────────────────────────────
+$rule-thin:   1px;
+$rule-medium: 3px;
+$rule-heavy:  6px;
+$rule-double: 8px;  // double rule = top 6px + gap + 1px
+
+// ── Sizes ─────────────────────────────────────────────────────────────────────
+$max-width:   1200px;
+$col-gap:     1.5rem;
+
+// ── Mixins ────────────────────────────────────────────────────────────────────
+
+// Newspaper double rule (thick + thin separated by white gap)
+@mixin double-rule($color: $black) {
+  border-top: 6px solid $color;
+  box-shadow: 0 3px 0 $color;   // 3px gap + 1px second rule via shadow
+  padding-top: 1rem;
+}
+
+// Stamp / label style tag
+@mixin stamp($color: $black) {
+  display: inline-block;
+  border: 2px solid $color;
+  padding: 0.1rem 0.5rem;
+  font-family: $font-mono;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: transparent;
+}

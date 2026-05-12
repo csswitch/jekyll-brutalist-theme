@@ -1,0 +1,151 @@
+@import 'variables';
+
+// ── Page wrapper ──────────────────────────────────────────────────────────────
+.brut-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+// ── Progress bar ──────────────────────────────────────────────────────────────
+.brut-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: $rule-heavy;
+  width: 0%;
+  background: $accent;
+  z-index: 1000;
+  transition: width 0.1s linear;
+}
+
+// ── Masthead / Nav ────────────────────────────────────────────────────────────
+.brut-masthead {
+  border-bottom: $rule-heavy solid $black;
+  padding: 0;
+
+  &__top {
+    border-bottom: $rule-thin solid $black;
+    padding: 0.35rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $font-mono;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $gray-3;
+    max-width: $max-width;
+    margin: 0 auto;
+
+    a { color: $gray-3; text-decoration: none; }
+    a:hover { color: $black; background: none; }
+  }
+
+  &__title-row {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem 0;
+    @include double-rule($black);
+  }
+
+  &__title {
+    font-family: $font-headline;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 0.9;
+    color: $black;
+    text-decoration: none;
+    display: block;
+
+    &:hover { color: $white; background: $black; }
+  }
+
+  &__nav {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border-top: $rule-thin solid $black;
+    flex-wrap: wrap;
+  }
+
+  &__nav-link {
+    font-family: $font-mono;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $black;
+    text-decoration: none;
+    padding: 0.4rem 1rem;
+    border-right: $rule-thin solid $black;
+    transition: background 0.15s, color 0.15s;
+
+    &:first-child { border-left: $rule-thin solid $black; }
+    &:hover, &.active { background: $black; color: $white; }
+  }
+
+  &__toggle {
+    display: none;
+    margin-left: auto;
+    background: $black;
+    color: $white;
+    border: none;
+    padding: 0.4rem 0.75rem;
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+}
+
+// ── Main ──────────────────────────────────────────────────────────────────────
+.brut-main {
+  flex: 1;
+  padding: 2rem 0 4rem;
+}
+
+// ── Footer ────────────────────────────────────────────────────────────────────
+.brut-footer {
+  border-top: $rule-heavy solid $black;
+  padding: 1.25rem 0;
+
+  &__inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__text {
+    font-family: $font-mono;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $gray-3;
+
+    a { color: $gray-2; }
+  }
+}
+
+// ── Responsive ────────────────────────────────────────────────────────────────
+@media (max-width: 600px) {
+  .brut-masthead {
+    &__nav { display: none; &.open { display: flex; flex-direction: column; padding-bottom: 0.5rem; } }
+    &__toggle { display: block; }
+    &__nav-link { border-right: none; border-bottom: $rule-thin solid $black; width: 100%; &:first-child { border-left: none; } }
+  }
+}

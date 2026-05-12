@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<div class="container">
+  <article>
+    <header class="post-header">
+      {% if page.tags.size > 0 %}
+      <div class="post-header__kicker">
+        {% for tag in page.tags limit: 1 %}{{ tag }}{% endfor %}
+      </div>
+      {% endif %}
+      <h1 class="post-header__title">{{ page.title }}</h1>
+      {% if page.description %}
+      <p class="post-header__deck">{{ page.description }}</p>
+      {% endif %}
+      <div class="post-header__meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        &nbsp;—&nbsp; {{ site.author.name }}
+        {% if page.tags.size > 0 %}
+        <div class="post-header__meta__tags">
+          {% for tag in page.tags %}
+          <a href="{{ '/tags#' | append: tag | relative_url }}" class="tag-stamp">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </header>
+    <div class="post-body">
+      {{ content }}
+    </div>
+  </article>
+</div>

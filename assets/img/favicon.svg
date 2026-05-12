@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#f5f0e8"/>
+  <rect width="32" height="6" fill="#0a0a0a"/>
+  <text x="2" y="22" font-family="serif" font-size="16" font-weight="bold" fill="#0a0a0a">BR</text>
+  <rect x="0" y="28" width="32" height="4" fill="#e8001a"/>
+</svg>

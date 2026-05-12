@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title and page.layout != 'home' %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
+  <!-- Bebas Neue (headlines) + Space Grotesk (body) + Space Mono (meta) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% seo %}
+  {% feed_meta %}
+</head>
+<body>
+  <div class="brut-progress" id="brut-progress" role="progressbar" aria-hidden="true"></div>
+
+  <div class="brut-wrap">
+    <header class="brut-masthead" role="banner">
+      <div class="brut-masthead__top">
+        <span>Est. {{ site.time | date: "%Y" }}</span>
+        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <time>{{ site.time | date: "%A, %B %-d, %Y" }}</time>
+      </div>
+      <div class="brut-masthead__title-row">
+        <a href="{{ '/' | relative_url }}" class="brut-masthead__title">{{ site.title }}</a>
+      </div>
+      <nav class="brut-masthead__nav" id="brut-nav" aria-label="Main navigation">
+        <a href="{{ '/' | relative_url }}" class="brut-masthead__nav-link">Front Page</a>
+        <a href="{{ '/archive' | relative_url }}" class="brut-masthead__nav-link">Archive</a>
+        <a href="{{ '/tags' | relative_url }}" class="brut-masthead__nav-link">Topics</a>
+        <a href="{{ '/about' | relative_url }}" class="brut-masthead__nav-link">About</a>
+        <button class="brut-masthead__toggle" aria-controls="brut-nav" aria-expanded="false">MENU</button>
+      </nav>
+    </header>
+
+    <main class="brut-main" id="main-content">
+      {{ content }}
+    </main>
+
+    <footer class="brut-footer">
+      <div class="brut-footer__inner">
+        <p class="brut-footer__text">
+          &copy; {{ site.time | date: "%Y" }}
+          <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        </p>
+        <p class="brut-footer__text">
+          Built with <a href="https://github.com/csswitch/jekyll-brutalist-theme">Brutalist</a>
+          by <a href="https://github.com/csswitch">csswitch</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="{{ '/assets/js/brutalist.js' | relative_url }}"></script>
+</body>
+</html>

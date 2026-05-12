@@ -1,0 +1,123 @@
+@import 'variables';
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: $bg;
+  color: $text;
+  font-family: $font-body;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ── Typography ────────────────────────────────────────────────────────────────
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-headline;
+  font-weight: 400;  // Bebas Neue has no bold weight — it IS the bold
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: $black;
+}
+
+h1 { font-size: clamp(3rem, 8vw, 7rem); }
+h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  border-top: $rule-heavy solid $black;
+  padding-top: 0.5rem;
+}
+h3 { font-size: clamp(1.4rem, 3vw, 2rem); margin-top: 2rem; margin-bottom: 0.5rem; }
+h4 { font-family: $font-mono; font-size: 0.85rem; letter-spacing: 0.12em; color: $gray-2; }
+
+p { margin-bottom: 1.25rem; font-size: 1.05rem; }
+
+a {
+  color: $black;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.15s, background 0.15s;
+
+  &:hover {
+    color: $white;
+    background: $black;
+    text-decoration: none;
+  }
+}
+
+// ── Code ──────────────────────────────────────────────────────────────────────
+code, pre { font-family: $font-mono; font-size: 0.88em; }
+
+code {
+  background: $black;
+  color: $white;
+  padding: 0.15em 0.45em;
+  border-radius: 0;  // brutalist: NO rounded corners
+}
+
+pre {
+  background: $black;
+  color: $white;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  border-left: $rule-heavy solid $accent;
+  position: relative;
+
+  &::before {
+    content: 'CODE';
+    position: absolute;
+    top: 0; right: 0;
+    font-family: $font-mono;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    background: $accent;
+    color: $white;
+    padding: 0.25rem 0.6rem;
+  }
+
+  code { background: none; color: inherit; padding: 0; }
+}
+
+// ── Blockquote ────────────────────────────────────────────────────────────────
+blockquote {
+  border-left: $rule-heavy solid $accent;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  background: $black;
+  color: $white;
+
+  p {
+    font-family: $font-headline;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.1;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    color: $white;
+  }
+}
+
+// ── Rules ─────────────────────────────────────────────────────────────────────
+hr {
+  border: none;
+  border-top: $rule-heavy solid $black;
+  margin: 2.5rem 0;
+}
+
+// ── Lists ─────────────────────────────────────────────────────────────────────
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+
+  li {
+    margin-bottom: 0.4rem;
+    padding-left: 0.25rem;
+  }
+}
+
+img { max-width: 100%; display: block; border: $rule-medium solid $black; }
